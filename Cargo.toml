@@ -1,0 +1,8 @@
+[package]
+name = "decode-userop-dan"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+alloy-sol-types = "0.7.7"
+hex-literal = "0.4.1"
