@@ -411,6 +411,7 @@ dependencies = [
  "alloy-core",
  "alloy-sol-types",
  "ethabi",
+ "ethereum-types",
  "hex",
  "hex-literal",
  "proptest",
