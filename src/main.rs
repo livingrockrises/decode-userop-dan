@@ -49,8 +49,8 @@ sol! {
 
 #[derive(Copy, Clone)]
 enum TxType {
-    ERC20,
-    ERC721,
+    ERC20, // permissionId abc
+    ERC721, // permisisonId xyz
 }
 
 fn limit_erc20_value(call_data: &[u8]) -> Result<(), Box<dyn std::error::Error>> {
@@ -179,13 +179,7 @@ fn check_calldata(
             // Decode executionCalldata based on the mode
             match call_type {
                 CallType::Single => {
-                    // println!("Decoding single call data: {:?}", executionCalldata);
-                    let decoded = decode(
-                        &[ParamType::Address, ParamType::Uint(256), ParamType::Bytes],
-                        &executionCalldata,
-                    );
-                    // println!("Decoded single call data: {:?}", decoded);
-
+                    println!("Decoding single call data: {:?}", executionCalldata);
                     let (target_address, value, function_call_data) = decode_single_call_data(&executionCalldata)?;
                     println!("Single call data: target_address: {}, value: {}, function_call_data: {}", target_address, value, hex::encode(&function_call_data));
 
